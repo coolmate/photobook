@@ -1,5 +1,5 @@
 <div class="page-container">
-  <div class="js-page layout-1"> {{! TODO: Quit hardcoding }}
+  <div {{bind-attr class="albumClassNames"}}>
     {{#each photo in currentPage.photos}}
       {{display-photo photo=photo}}
     {{/each}}

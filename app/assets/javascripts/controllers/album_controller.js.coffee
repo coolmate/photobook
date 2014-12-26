@@ -1,4 +1,8 @@
 Photobook.AlbumController = Ember.ObjectController.extend
+  albumClassNames: (->
+    "js-page layout-#{@get('currentPage.layout')}"
+  ).property('currentPage.layout')
+
   currentPageNum: 0
 
   currentPage: (->
