@@ -7,7 +7,7 @@ Photobook.AlbumEditController = Ember.ObjectController.extend Photobook.AlbumCon
       return unless @get('isLoaded')
       page = @store.createRecord('page', layout: @DEFAULT_LAYOUT, album: @get('model'))
       for i in [1..@LAYOUTS[@DEFAULT_LAYOUT].numPhotos]
-        @store.createRecord('photo', page: page)
+        @store.createRecord('photo', page: page, shape: null)
       for i in [1..@LAYOUTS[@DEFAULT_LAYOUT].numQuotes]
         @store.createRecord('quote', page: page)
       @send('goEnd')
