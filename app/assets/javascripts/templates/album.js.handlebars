@@ -1,5 +1,8 @@
 <div class="page-container">
   <ul class="js-page">
+    {{#each photo in currentPage.photos}}
+      {{photo.url}}
+    {{/each}}
   </ul>
 </div>
 

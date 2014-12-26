@@ -2,7 +2,7 @@ Photobook.AlbumController = Ember.ObjectController.extend
   currentPageNum: 0
 
   currentPage: (->
-    @get('model.pages')?[@get('currentPageNum')]
+    @get('model.pages').objectAt(@get('currentPageNum'))
   ).property('model.pages.[]', 'currentPageNum')
 
   hasNext: (->
