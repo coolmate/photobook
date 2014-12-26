@@ -1,7 +1,8 @@
 Photobook.DisplayPhotoComponent = Ember.Component.extend
   photo: null
+  isEmpty: Ember.computed.not('photo.url')
 
-  classNameBindings: ['photoClassName', 'shapeClassName', 'borderClassName']
+  classNameBindings: ['photoClassName', 'shapeClassName', 'isEmpty']
   photoClassName: 'photo'
   shapeClassName: (->
     if shape = @get('photo.shape')
@@ -9,12 +10,6 @@ Photobook.DisplayPhotoComponent = Ember.Component.extend
     else
       ""
   ).property('photo.shape')
-  borderClassName: (->
-    if @get('photo.url')
-      ""
-    else
-      "is-empty"
-  ).property('photo.url')
 
   attributeBindings: ['style']
   style: (->
