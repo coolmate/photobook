@@ -4,9 +4,6 @@ class Page < ActiveRecord::Base
   belongs_to :album
 
   def serializable_hash(options = {})
-    hash = super
-    hash[:photos] = photos.map(&:id)
-    hash[:quotes] = quotes.map(&:id)
-    hash
+    super(include: [:photos, :quotes])
   end
 end
