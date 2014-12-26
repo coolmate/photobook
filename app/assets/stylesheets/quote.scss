@@ -4,11 +4,14 @@
   color: $color-grey;
   font-family: 'Merriweather', serif;
   line-height: 1.5em;
-  list-style-type: none;
   overflow: hidden;
   position: absolute;
 
   &.is-edit {
+    cursor: pointer;
+  }
+
+  &.is-empty {
     border: 1px dashed $color-grey;
   }
 }

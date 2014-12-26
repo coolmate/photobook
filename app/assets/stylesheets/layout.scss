@@ -14,9 +14,16 @@
   height: 250px;
 }
 
-.layout-1 .quote:nth-child(1) {
+.layout-1 .quote:nth-child(3) {
   top: 30px;
   right: 30px;
+  width: 310px;
+  height: 250px;
+}
+
+.layout-1 .quote:nth-child(4) {
+  bottom: 30px;
+  left: 30px;
   width: 310px;
   height: 250px;
 }

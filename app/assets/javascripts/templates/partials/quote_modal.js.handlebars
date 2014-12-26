@@ -1,0 +1,33 @@
+<div class="js-quote-modal modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close"
+                {{action "closeQuoteModal"}} aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Edit Quote</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="quote-content" class="col-sm-2 control-label">
+              Content
+            </label>
+            <div class="col-sm-10">
+              {{textarea id="quote-content"
+                         class="form-control"
+                         value=editingQuote.content}}
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default"
+                {{action "closeQuoteModal"}}>Close</button>
+        <button type="button" class="btn btn-primary"
+                {{action "saveQuoteModal"}}>Save</button>
+      </div>
+    </div>
+  </div>
+</div>

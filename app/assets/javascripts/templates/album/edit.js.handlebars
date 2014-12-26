@@ -3,9 +3,13 @@
     {{#each photo in currentPage.photos}}
       {{display-photo photo=photo action="openPhotoModal" class="is-edit"}}
     {{/each}}
+    {{#each quote in currentPage.quotes}}
+      {{display-quote quote=quote action="openQuoteModal" class="is-edit"}}
+    {{/each}}
   </div>
 </div>
 
 {{partial "partials/navigation"}}
 {{partial "partials/new_page_button"}}
 {{partial "partials/photo_modal"}}
+{{partial "partials/quote_modal"}}
