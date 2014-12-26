@@ -1,6 +1,6 @@
 Photobook.DisplayPhotoComponent = Ember.Component.extend
   photo: null
-  classNames: ['photo', 'photo-1'] # TODO: Quit hardcoding
+  classNames: ['photo']
   attributeBindings: ['style']
 
   style: (->
