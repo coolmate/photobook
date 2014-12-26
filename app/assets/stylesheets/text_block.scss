@@ -1,0 +1,14 @@
+@import 'variables';
+
+.quote {
+  color: $color-grey;
+  font-family: 'Merriweather', serif;
+  line-height: 1.5em;
+  list-style-type: none;
+  overflow: hidden;
+  position: absolute;
+
+  &.is-edit {
+    border: 1px dashed $color-grey;
+  }
+}

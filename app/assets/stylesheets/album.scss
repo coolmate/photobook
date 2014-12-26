@@ -1,0 +1,41 @@
+@import "variables";
+
+.edit-tool {
+  margin: 0 20px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.next-button, .prev-button {
+  position: absolute;
+  top: 30px;
+  cursor: pointer;
+  left: 50%;
+}
+
+.prev-button {
+  margin-left: -($page-container-width / 2) - $ribbon-width + $ribbon-offset;
+}
+
+.next-button {
+  margin-left: $page-container-width / 2 - $ribbon-offset;
+}
+
+.page-nav-container {
+  width: 80%;
+  margin: 10px auto;
+}
+
+.page-container {
+  background: white;
+  position: relative;
+  margin: 20px auto;
+  width: $page-container-width;
+  height: $page-container-height;
+  z-index: 1; /* Above the ribbons */
+
+  border-radius: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+}

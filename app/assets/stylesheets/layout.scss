@@ -1,0 +1,29 @@
+@import "variables";
+
+.layout-1 .photo-1 {
+  top: 30px;
+  left: 30px;
+  width: 400px;
+  height: 250px;
+}
+
+.layout-1 .photo-2 {
+  bottom: 30px;
+  right: 30px;
+  width: 400px;
+  height: 250px;
+}
+
+.layout-1 .quote-1 {
+  top: 30px;
+  right: 30px;
+  width: 310px;
+  height: 250px;
+}
+
+.layout-2 .photo-1 {
+  top: $page-container-height / 2 - (500px / 2);
+  left: $page-container-width / 2 - (400px / 2);
+  width: 400px;
+  height: 500px;
+}

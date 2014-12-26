@@ -1,0 +1,22 @@
+@import 'variables';
+
+.photo {
+  list-style-type: none;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  position: absolute;
+
+  &.is-edit {
+    border: 1px dashed $color-grey;
+  }
+}
+
+.photo-circle {
+  border-radius: 50%;
+}
+
+.photo-rounded {
+  border-radius: 5px;
+}
