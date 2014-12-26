@@ -1,11 +1,3 @@
-<div class="page-container">
-  <div {{bind-attr class="albumClassNames"}}>
-    {{#each photo in currentPage.photos}}
-      {{display-photo photo=photo}}
-    {{/each}}
-  </div>
-</div>
-
 {{#if hasPrev}}
   <div class="ribbon prev-button" {{action "goPrev" target="controller"}}>
     <div class="ribbon-stitches-top"></div>

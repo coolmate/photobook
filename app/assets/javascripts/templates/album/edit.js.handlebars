@@ -1,0 +1,10 @@
+<div class="page-container">
+  <div {{bind-attr class="albumClassNames"}}>
+    {{#each photo in currentPage.photos}}
+      {{display-photo photo=photo}}
+    {{/each}}
+  </div>
+</div>
+
+{{partial "partials/navigation"}}
+{{partial "partials/new_page_button"}}

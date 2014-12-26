@@ -7,7 +7,7 @@
   transform: translateY(-50%);
 }
 
-.next-button, .prev-button {
+.next-button, .prev-button, .new-page-button {
   position: absolute;
   top: 30px;
   cursor: pointer;
@@ -18,8 +18,13 @@
   margin-left: -($page-container-width / 2) - $ribbon-width + $ribbon-offset;
 }
 
-.next-button {
+.next-button,
+.new-page-button {
   margin-left: $page-container-width / 2 - $ribbon-offset;
+}
+
+.new-page-button {
+  top: 150px;
 }
 
 .page-nav-container {

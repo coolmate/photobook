@@ -1,4 +1,4 @@
-Photobook.AlbumController = Ember.ObjectController.extend
+Photobook.AlbumControls = Ember.Mixin.create
   albumClassNames: (->
     "js-page layout-#{@get('currentPage.layout')}"
   ).property('currentPage.layout')
