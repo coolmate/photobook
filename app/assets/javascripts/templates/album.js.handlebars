@@ -1,9 +1,9 @@
 <div class="page-container">
-  <ul class="js-page">
+  <div class="js-page layout-1"> {{! TODO: Quit hardcoding }}
     {{#each photo in currentPage.photos}}
-      {{photo.url}}
+      {{display-photo photo=photo}}
     {{/each}}
-  </ul>
+  </div>
 </div>
 
 {{#if hasPrev}}
