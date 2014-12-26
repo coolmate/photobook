@@ -10,13 +10,6 @@ Photobook.AlbumControls = Ember.Mixin.create
     value: 'oval'
   ]
 
-  LAYOUTS:
-    1:
-      numPhotos: 2
-      numQuotes: 2
-    2:
-      numPhotos: 1
-      numQuotes: 0
   DEFAULT_LAYOUT: 1
 
   albumClassNames: (->
