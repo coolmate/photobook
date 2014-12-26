@@ -9,12 +9,15 @@
   position: absolute;
 
   &.is-edit {
-    border: 1px dashed $color-grey;
     cursor: pointer;
+  }
+
+  &.is-empty {
+    border: 1px dashed $color-grey;
   }
 }
 
-.photo-circle {
+.photo-oval {
   border-radius: 50%;
 }
 

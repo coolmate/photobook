@@ -10,6 +10,7 @@ class PhotosController < ApplicationController
   def update
     photo = Photo.find(params['id'])
     photo.url = params['photo']['url']
+    photo.shape = params['photo']['shape']
     photo.save!
     render json: photo
   end

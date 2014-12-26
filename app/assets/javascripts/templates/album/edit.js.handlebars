@@ -1,7 +1,7 @@
 <div class="page-container">
   <div {{bind-attr class="albumClassNames"}}>
     {{#each photo in currentPage.photos}}
-      {{edit-photo photo=photo action="openPhotoModal"}}
+      {{display-photo photo=photo action="openPhotoModal" class="is-edit"}}
     {{/each}}
   </div>
 </div>

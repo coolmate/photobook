@@ -1,4 +1,15 @@
 Photobook.AlbumControls = Ember.Mixin.create
+  PHOTO_SHAPES: [
+    name: 'Square'
+    value: null
+  ,
+    name: 'Rounded corners'
+    value: 'rounded'
+  ,
+    name: 'Oval'
+    value: 'oval'
+  ]
+
   LAYOUTS:
     1:
       numPhotos: 2
