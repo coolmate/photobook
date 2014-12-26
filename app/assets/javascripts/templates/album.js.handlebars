@@ -3,14 +3,18 @@
   </ul>
 </div>
 
-<div class="ribbon prev-button">
-  <div class="ribbon-stitches-top"></div>
-  <strong class="ribbon-content"><h1>Back</h1></strong>
-  <div class="ribbon-stitches-bottom"></div>
-</div>
+{{#if hasPrev}}
+  <div class="ribbon prev-button" {{action "goPrev" target="controller"}}>
+    <div class="ribbon-stitches-top"></div>
+    <strong class="ribbon-content"><h1>Back</h1></strong>
+    <div class="ribbon-stitches-bottom"></div>
+  </div>
+{{/if}}
 
-<div class="ribbon next-button">
-  <div class="ribbon-stitches-top"></div>
-  <strong class="ribbon-content"><h1>Next</h1></strong>
-  <div class="ribbon-stitches-bottom"></div>
-</div>
+{{#if hasNext}}
+  <div class="ribbon next-button" {{action "goNext" target="controller"}}>
+    <div class="ribbon-stitches-top"></div>
+    <strong class="ribbon-content"><h1>Next</h1></strong>
+    <div class="ribbon-stitches-bottom"></div>
+  </div>
+{{/if}}
