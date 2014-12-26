@@ -1,0 +1,22 @@
+<div class="js-layout-modal modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close"
+                {{action "closeLayoutModal"}} aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Choose a layout</h4>
+      </div>
+      <div class="modal-body">
+        Layout stuff
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default"
+                {{action "closeLayoutModal"}}>Close</button>
+        <button type="button" class="btn btn-primary"
+                {{action "saveLayoutModal"}}>Save</button>
+      </div>
+    </div>
+  </div>
+</div>

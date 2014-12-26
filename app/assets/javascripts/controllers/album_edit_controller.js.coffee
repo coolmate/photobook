@@ -5,9 +5,7 @@ Photobook.AlbumEditController = Ember.ObjectController.extend Photobook.AlbumCon
   actions:
     newPage: ->
       return unless @get('isLoaded')
-      page = @store.createRecord('page', layout: @DEFAULT_LAYOUT, album: @get('model'))
-      page.save()
-      @send('goEnd')
+      @send('openLayoutModal')
 
     openPhotoModal: (photo) ->
       @set('editingPhoto', photo)
@@ -17,6 +15,9 @@ Photobook.AlbumEditController = Ember.ObjectController.extend Photobook.AlbumCon
       @set('editingQuote', quote)
       $('.js-quote-modal').fadeIn()
 
+    openLayoutModal: (quote) ->
+      $('.js-layout-modal').fadeIn()
+
     closePhotoModal: ->
       @get('editingPhoto').rollback()
       $('.js-photo-modal').fadeOut()
@@ -25,6 +26,9 @@ Photobook.AlbumEditController = Ember.ObjectController.extend Photobook.AlbumCon
       @get('editingQuote').rollback()
       $('.js-quote-modal').fadeOut()
 
+    closeLayoutModal: ->
+      $('.js-layout-modal').fadeOut()
+
     savePhotoModal: ->
       @get('editingPhoto').save()
       @send('closePhotoModal')
@@ -32,3 +36,12 @@ Photobook.AlbumEditController = Ember.ObjectController.extend Photobook.AlbumCon
     saveQuoteModal: ->
       @get('editingQuote').save()
       @send('closeQuoteModal')
+
+    saveLayoutModal: ->
+      page = @store.createRecord('page',
+        layout: @DEFAULT_LAYOUT,
+        album: @get('model')
+      )
+      page.save().then =>
+        @send('closeLayoutModal')
+        @send('goEnd')
