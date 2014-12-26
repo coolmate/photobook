@@ -1,10 +1,11 @@
 <div class="page-container">
   <div {{bind-attr class="albumClassNames"}}>
     {{#each photo in currentPage.photos}}
-      {{edit-photo photo=photo}}
+      {{edit-photo photo=photo action="openPhotoModal"}}
     {{/each}}
   </div>
 </div>
 
 {{partial "partials/navigation"}}
 {{partial "partials/new_page_button"}}
+{{partial "partials/photo_modal"}}

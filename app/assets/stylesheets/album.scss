@@ -1,10 +1,7 @@
 @import "variables";
 
-.edit-tool {
-  margin: 0 20px;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+.modal {
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .next-button, .prev-button, .new-page-button {
