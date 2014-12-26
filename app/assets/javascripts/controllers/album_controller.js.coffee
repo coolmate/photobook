@@ -12,5 +12,12 @@ Photobook.AlbumController = Ember.ObjectController.extend
   hasPrev: Ember.computed.gt('currentPageNum', 0)
 
   actions:
-    goNext: -> @incrementProperty('currentPageNum')
-    goPrev: -> @decrementProperty('currentPageNum')
+    goNext: ->
+      $('.js-page').fadeOut().promise().done =>
+        @incrementProperty('currentPageNum')
+        $('.js-page').fadeIn()
+
+    goPrev: ->
+      $('.js-page').fadeOut().promise().done =>
+        @decrementProperty('currentPageNum')
+        $('.js-page').fadeIn()
