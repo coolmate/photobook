@@ -1,4 +1,9 @@
 <div class="page-container">
+  <div class="delete-page-button" {{action "deletePage"}}>
+    <span class="glyphicon glyphicon-remove"
+          aria-label="Delete"
+          aria-hidden="true"></span>
+  </div>
   <div {{bind-attr class="albumClassNames"}}>
     {{#each photo in currentPage.photos}}
       {{display-photo photo=photo action="openPhotoModal" class="is-edit"}}

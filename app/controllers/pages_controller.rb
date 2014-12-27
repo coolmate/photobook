@@ -31,4 +31,9 @@ class PagesController < ApplicationController
     end
     render json: { page: page }
   end
+
+  def destroy
+    Page.find(params[:id]).destroy
+    render json: {} # Ember blows up unless we return something.
+  end
 end

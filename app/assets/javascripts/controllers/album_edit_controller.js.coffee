@@ -18,6 +18,11 @@ Photobook.AlbumEditController = Ember.ObjectController.extend Photobook.AlbumCon
       return unless @get('isLoaded')
       @send('openLayoutModal')
 
+    deletePage: ->
+      page = @get('currentPage')
+      @send('goPrev') if @get('hasPrev')
+      page.destroyRecord()
+
     openPhotoModal: (photo) ->
       @set('editingPhoto', photo)
       $('.js-photo-modal').fadeIn()
