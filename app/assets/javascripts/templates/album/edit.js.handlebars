@@ -10,7 +10,9 @@
 </div>
 
 {{partial "partials/navigation"}}
-{{partial "partials/new_page_button"}}
+{{ribbon-nav buttonClassName="new-page-button"
+             ribbonText="+Page"
+             action="newPage"}}
 {{partial "partials/photo_modal"}}
 {{partial "partials/quote_modal"}}
 {{partial "partials/layout_modal"}}

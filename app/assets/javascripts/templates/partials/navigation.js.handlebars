@@ -1,15 +1,7 @@
 {{#if hasPrev}}
-  <div class="ribbon prev-button" {{action "goPrev" target="controller"}}>
-    <div class="ribbon-stitches-top"></div>
-    <strong class="ribbon-content"><h1>Back</h1></strong>
-    <div class="ribbon-stitches-bottom"></div>
-  </div>
+  {{ribbon-nav buttonClassName="prev-button" ribbonText="Back" action="goPrev"}}
 {{/if}}
 
 {{#if hasNext}}
-  <div class="ribbon next-button" {{action "goNext" target="controller"}}>
-    <div class="ribbon-stitches-top"></div>
-    <strong class="ribbon-content"><h1>Next</h1></strong>
-    <div class="ribbon-stitches-bottom"></div>
-  </div>
+  {{ribbon-nav buttonClassName="next-button" ribbonText="Next" action="goNext"}}
 {{/if}}
