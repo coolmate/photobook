@@ -4,3 +4,4 @@ Photobook.Router.map ()->
   @resource 'albums'
   @resource 'album', { path: '/album/:album_id' }, ->
     @route('edit')
+  @route 'signup'
