@@ -5,3 +5,9 @@ Photobook.SignupRoute = Ember.Route.extend
   actions:
     signup: ->
       @modelFor(@routeName).save()
+
+    login: ->
+      $.post '/login',
+        session:
+          email: @modelFor(@routeName).get('email')
+          password: @modelFor(@routeName).get('password')
