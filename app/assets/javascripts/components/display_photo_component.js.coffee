@@ -13,7 +13,10 @@ Photobook.DisplayPhotoComponent = Ember.Component.extend
 
   attributeBindings: ['style']
   style: (->
-    "background-image: url(#{@get('photo.url')})"
+    if url = @get('photo.url')
+      "background-image: url(#{@get('photo.url')})"
+    else
+      ""
   ).property('photo.url')
 
   click: ->
