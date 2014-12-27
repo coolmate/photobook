@@ -1,23 +1,42 @@
-<form class="form-signup">
-  <h2>Sign Up</h2>
-  {{input type="text"
-          class="form-control"
-          id="name"
-          value=name
-          placeholder="Name"}}
-  {{input type="email"
-          class="form-control"
-          id="email"
-          value=email
-          placeholder="Email"}}
-  {{input type="password"
-          class="form-control"
-          id="password"
-          value=password
-          placeholder="Password"}}
-  <button type="submit"
-          class="btn btn-lg btn-primary btn-block"
-          {{action "save"}}>
-    Sign Up
-  </button>
-</form>
+<div class="row">
+  <div class="col-md-6 form-signup-container">
+    <form class="form-signup">
+      <h2>Sign Up</h2>
+      {{input type="text"
+              class="form-control"
+              value=name
+              placeholder="Name"}}
+      {{input type="email"
+              class="form-control"
+              value=email
+              placeholder="Email"}}
+      {{input type="password"
+              class="form-control"
+              value=password
+              placeholder="Password"}}
+      <button type="submit"
+              class="btn btn-lg btn-success btn-block"
+              {{action "signup"}}>
+        Sign Up
+      </button>
+    </form>
+  </div>
+  <div class="col-md-6 form-login-container">
+    <form class="form-login">
+      <h2>Log In</h2>
+      {{input type="email"
+              class="form-control"
+              value=email
+              placeholder="Email"}}
+      {{input type="password"
+              class="form-control"
+              value=password
+              placeholder="Password"}}
+      <button type="submit"
+              class="btn btn-lg btn-primary btn-block"
+              {{action "login"}}>
+        Log In
+      </button>
+    </form>
+  </div>
+</div>

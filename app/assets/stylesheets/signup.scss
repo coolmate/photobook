@@ -1,0 +1,43 @@
+@import "compass";
+@import "variables";
+
+.form-signup-container,
+.form-login-container {
+  margin-top: 30px;
+}
+
+.form-signup-container {
+  border-right: 1px solid $color-light-grey;
+}
+
+.form-signup {
+  margin: 0 0 0 auto; // Flush right
+}
+
+.form-signup,
+.form-login {
+  max-width: 400px;
+  padding: 15px;
+
+  & > .form-control {
+    height: auto;
+    padding: 10px;
+  }
+
+  & > input:first-of-type {
+    margin-bottom: -1px;
+    @include border-bottom-radius(0);
+  }
+
+  & > input:not(:first-of-type):not(:last-of-type) {
+    margin-top: -1px;
+    margin-bottom: -1px;
+    @include border-radius(0);
+  }
+
+  & > input:last-of-type {
+    margin-top: -1px;
+    margin-bottom: 10px;
+    @include border-top-radius(0);
+  }
+}

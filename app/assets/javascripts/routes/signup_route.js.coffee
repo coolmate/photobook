@@ -3,5 +3,5 @@ Photobook.SignupRoute = Ember.Route.extend
     @store.createRecord('user')
 
   actions:
-    save: ->
+    signup: ->
       @modelFor(@routeName).save()
