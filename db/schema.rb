@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141227013854) do
+ActiveRecord::Schema.define(version: 20141227045404) do
 
   create_table "albums", force: true do |t|
   end
@@ -31,5 +31,13 @@ ActiveRecord::Schema.define(version: 20141227013854) do
     t.integer "page_id"
     t.text    "content"
   end
+
+  create_table "users", force: true do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end

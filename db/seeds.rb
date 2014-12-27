@@ -6,6 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.create(
+  name: "Test User",
+  email: "test@example.com",
+  password: "password"
+)
+
 album = Album.create
 
 page = Page.create(layout: 1, album: album)
