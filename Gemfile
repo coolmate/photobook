@@ -40,3 +40,4 @@ gem 'bcrypt', '~> 3.1.7'
 
 
 gem "ember-rails", "~> 0.15"
+gem 'compass-rails'

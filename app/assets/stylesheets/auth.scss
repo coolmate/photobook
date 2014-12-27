@@ -1,0 +1,29 @@
+@import "compass";
+
+.form-signup {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+
+  & > .form-control {
+    height: auto;
+    padding: 10px;
+  }
+
+  & > #name {
+    margin-bottom: -1px;
+    @include border-bottom-radius(0);
+  }
+
+  & > #email {
+    margin-top: -1px;
+    margin-bottom: -1px;
+    @include border-radius(0);
+  }
+
+  & > #password {
+    margin-top: -1px;
+    margin-bottom: 10px;
+    @include border-top-radius(0);
+  }
+}
