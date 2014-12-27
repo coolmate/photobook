@@ -5,6 +5,10 @@ class UsersController < ApplicationController
     render json: { user: user }
   end
 
+  def current
+    render json: current_user || {}
+  end
+
   private
 
   def user_params

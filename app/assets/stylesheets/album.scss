@@ -19,7 +19,7 @@
 
 .next-button, .prev-button, .new-page-button {
   position: absolute;
-  top: 30px;
+  top: 100px;
   cursor: pointer;
   left: 50%;
 }
@@ -34,12 +34,7 @@
 }
 
 .new-page-button {
-  top: 150px;
-}
-
-.page-nav-container {
-  width: 80%;
-  margin: 10px auto;
+  top: 220px;
 }
 
 .page-container {

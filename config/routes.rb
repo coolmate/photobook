@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   resources :pages
   resources :photos
   resources :quotes
+
+  get 'users/current' => 'users#current'
   resources :users
 
-  get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
