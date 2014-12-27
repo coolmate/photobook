@@ -19,8 +19,12 @@ class PagesController < ApplicationController
   end
 
   def create
+    album = Album.find(params[:page][:album])
+    return head :bad_request unless album
+    return head :unauthorized unless current_user == album.user
+
     page = Page.create(
-      album_id: params[:page][:album],
+      album: album,
       layout: params[:page][:layout]
     )
     (1..LAYOUTS[page.layout][:num_photos]).each do
