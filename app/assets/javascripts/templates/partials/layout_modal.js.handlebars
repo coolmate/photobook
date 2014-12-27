@@ -9,11 +9,15 @@
         <h4 class="modal-title">Choose a layout</h4>
       </div>
       <div class="modal-body">
-        Layout stuff
+        {{#each layout in LAYOUTS itemController="layoutPreview"}}
+          <div {{bind-attr class=":layout-preview layout.isSelected"}} {{action "selectLayout" layout.id}}>
+            {{layout-preview layout.numPhotos layout.id action="closeLayoutModal"}}
+          </div>
+        {{/each}}
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default"
-                {{action "closeLayoutModal"}}>Close</button>
+                {{action "closeLayoutModal"}}>Cancel</button>
         <button type="button" class="btn btn-primary"
                 {{action "saveLayoutModal"}}>Save</button>
       </div>

@@ -1,36 +1,50 @@
 @import "variables";
 
+.layout-preview {
+  border: 1px solid $color-grey;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 20px;
+  position: relative;
+  width: 100px;
+  height: 75px;
+
+  &.is-selected {
+    box-shadow: 0 0 4px 1px rgba(255, 0, 0, 1);
+  }
+}
+
 .layout-1 .photo:nth-child(1) {
-  top: 30px;
-  left: 30px;
-  width: 400px;
-  height: 250px;
+  top: 5%;
+  left: 3.75%;
+  width: 50%;
+  height: 42%;
 }
 
 .layout-1 .photo:nth-child(2) {
-  bottom: 30px;
-  right: 30px;
-  width: 400px;
-  height: 250px;
+  bottom: 5%;
+  right: 3.75%;
+  width: 50%;
+  height: 42%;
 }
 
 .layout-1 .quote:nth-child(3) {
-  top: 30px;
-  right: 30px;
-  width: 310px;
-  height: 250px;
+  top: 5%;
+  right: 3.75%;
+  width: 38.75%;
+  height: 42%;
 }
 
 .layout-1 .quote:nth-child(4) {
-  bottom: 30px;
-  left: 30px;
-  width: 310px;
-  height: 250px;
+  bottom: 5%;
+  left: 3.75%;
+  width: 38.75%;
+  height: 42%;
 }
 
 .layout-2 .photo:nth-child(1) {
-  top: $page-container-height / 2 - (500px / 2);
-  left: $page-container-width / 2 - (400px / 2);
-  width: 400px;
-  height: 500px;
+  top: 10%;
+  left: 25%;
+  width: 50%;
+  height: 80%;
 }

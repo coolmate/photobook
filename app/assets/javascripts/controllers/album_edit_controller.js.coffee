@@ -1,6 +1,17 @@
 Photobook.AlbumEditController = Ember.ObjectController.extend Photobook.AlbumControls,
-  editingPhoto: null
-  editingQuote: null
+  LAYOUTS: [
+    numPhotos: 2
+    numQuotes: 2
+    id: 1
+  ,
+    numPhotos: 1
+    numQuotes: 0
+    id: 2
+  ]
+
+  editingPhoto   : null
+  editingQuote   : null
+  selectedLayout : 1
 
   actions:
     newPage: ->
@@ -39,9 +50,12 @@ Photobook.AlbumEditController = Ember.ObjectController.extend Photobook.AlbumCon
 
     saveLayoutModal: ->
       page = @store.createRecord('page',
-        layout: @DEFAULT_LAYOUT,
+        layout: @get('selectedLayout')
         album: @get('model')
       )
       page.save().then =>
         @send('closeLayoutModal')
         @send('goEnd')
+
+    selectLayout: (layout) ->
+      @set('selectedLayout', layout)

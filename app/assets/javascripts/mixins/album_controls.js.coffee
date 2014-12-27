@@ -10,8 +10,6 @@ Photobook.AlbumControls = Ember.Mixin.create
     value: 'oval'
   ]
 
-  DEFAULT_LAYOUT: 1
-
   albumClassNames: (->
     "js-page layout-#{@get('currentPage.layout')}"
   ).property('currentPage.layout')
