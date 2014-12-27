@@ -9,6 +9,9 @@ class PhotosController < ApplicationController
 
   def update
     photo = Photo.find(params['id'])
+    return head :bad_request unless photo
+    return head :unauthorized unless current_user == photo.page.album.user
+
     photo.url = params['photo']['url']
     photo.shape = params['photo']['shape']
     photo.save!

@@ -27,17 +27,17 @@ class PagesController < ApplicationController
       album: album,
       layout: params[:page][:layout]
     )
-    (1..LAYOUTS[page.layout][:num_photos]).each do
-      Photo.create(page: page)
-    end
-    (1..LAYOUTS[page.layout][:num_quotes]).each do
-      Quote.create(page: page)
-    end
+    (1..LAYOUTS[page.layout][:num_photos]).each { Photo.create(page: page) }
+    (1..LAYOUTS[page.layout][:num_quotes]).each { Quote.create(page: page) }
     render json: { page: page }
   end
 
   def destroy
-    Page.find(params[:id]).destroy
+    page = Page.find(params[:id])
+    return head :bad_request unless page
+    return head :unauthorized unless current_user == page.album.user
+
+    page.destroy
     render json: {} # Ember blows up unless we return something.
   end
 end
