@@ -12,7 +12,7 @@ user = User.create(
   password: "password"
 )
 
-album = Album.create(user: user)
+album = Album.create(user: user, name: "My Album")
 
 page = Page.create(layout: 1, album: album)
 page2 = Page.create(layout: 1, album: album)
