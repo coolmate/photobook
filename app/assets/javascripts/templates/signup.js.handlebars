@@ -4,15 +4,15 @@
       <h2>Sign Up</h2>
       {{input type="text"
               class="form-control"
-              value=name
+              value=signupUser.name
               placeholder="Name"}}
       {{input type="email"
               class="form-control"
-              value=email
+              value=signupUser.email
               placeholder="Email"}}
       {{input type="password"
               class="form-control"
-              value=password
+              value=signupUser.password
               placeholder="Password"}}
       <button type="submit"
               class="btn btn-lg btn-success btn-block"
@@ -26,11 +26,11 @@
       <h2>Log In</h2>
       {{input type="email"
               class="form-control"
-              value=email
+              value=loginUser.email
               placeholder="Email"}}
       {{input type="password"
               class="form-control"
-              value=password
+              value=loginUser.password
               placeholder="Password"}}
       <button type="submit"
               class="btn btn-lg btn-primary btn-block"
