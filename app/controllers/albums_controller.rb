@@ -1,6 +1,10 @@
 class AlbumsController < ApplicationController
   def index
-    render json: Album.all
+    if current_user
+      render json: Album.where(user: current_user)
+    else
+      render json: []
+    end
   end
 
   def show
