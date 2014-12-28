@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def create
     user = User.create(user_params)
     log_in user
-    render json: { user: user }
+    render json: user
   end
 
   def current

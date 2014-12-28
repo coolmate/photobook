@@ -15,7 +15,7 @@ class PagesController < ApplicationController
   end
 
   def show
-    render json: { page: Page.find(params[:id]) }
+    render json: Page.find(params[:id])
   end
 
   def create
@@ -29,7 +29,7 @@ class PagesController < ApplicationController
     )
     (1..LAYOUTS[page.layout][:num_photos]).each { Photo.create(page: page) }
     (1..LAYOUTS[page.layout][:num_quotes]).each { Quote.create(page: page) }
-    render json: { page: page }
+    render json: page
   end
 
   def destroy

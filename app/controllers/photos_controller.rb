@@ -4,7 +4,7 @@ class PhotosController < ApplicationController
   end
 
   def show
-    render json: { photo: Photo.find(params[:id]) }
+    render json: Photo.find(params[:id])
   end
 
   def update

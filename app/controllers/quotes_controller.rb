@@ -4,7 +4,7 @@ class QuotesController < ApplicationController
   end
 
   def show
-    render json: { quote: Quote.find(params[:id]) }
+    render json: Quote.find(params[:id])
   end
 
   def update

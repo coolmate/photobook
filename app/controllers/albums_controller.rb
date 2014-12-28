@@ -4,6 +4,6 @@ class AlbumsController < ApplicationController
   end
 
   def show
-    render json: { album: Album.find(params[:id]) }
+    render json: Album.find(params[:id])
   end
 end
