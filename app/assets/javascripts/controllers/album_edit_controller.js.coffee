@@ -25,25 +25,25 @@ Photobook.AlbumEditController = Ember.ObjectController.extend Photobook.AlbumCon
 
     openPhotoModal: (photo) ->
       @set('editingPhoto', photo)
-      $('.js-photo-modal').fadeIn()
+      $('#photo-modal').fadeIn()
 
     openQuoteModal: (quote) ->
       @set('editingQuote', quote)
-      $('.js-quote-modal').fadeIn()
+      $('#quote-modal').fadeIn()
 
     openLayoutModal: (quote) ->
-      $('.js-layout-modal').fadeIn()
+      $('#layout-modal').fadeIn()
 
     closePhotoModal: ->
       @get('editingPhoto').rollback()
-      $('.js-photo-modal').fadeOut()
+      $('#photo-modal').fadeOut()
 
     closeQuoteModal: ->
       @get('editingQuote').rollback()
-      $('.js-quote-modal').fadeOut()
+      $('#quote-modal').fadeOut()
 
     closeLayoutModal: ->
-      $('.js-layout-modal').fadeOut()
+      $('#layout-modal').fadeOut()
 
     savePhotoModal: ->
       @get('editingPhoto').save()
