@@ -41,4 +41,9 @@ Photobook.AlbumControls = Ember.Mixin.create
     goEnd: ->
       $('.js-page').fadeOut().promise().done =>
         @set('currentPageNum', @get('model.pages.length') - 1)
+
+        # TODO: This shouldn't be necessary, but the album doesn't refresh
+        # when there are no pages to begin with.
+        window.location.reload(true)
+
         $('.js-page').fadeIn()

@@ -1,12 +1,18 @@
 <div class="page-container">
-  <div {{bind-attr class="albumClassNames"}}>
-    {{#each photo in currentPage.photos}}
-      {{display-photo photo=photo}}
-    {{/each}}
-    {{#each quote in currentPage.quotes}}
-      {{display-quote quote=quote}}
-    {{/each}}
-  </div>
+  {{#if currentPage}}
+    <div {{bind-attr class="albumClassNames"}}>
+      {{#each photo in currentPage.photos}}
+        {{display-photo photo=photo}}
+      {{/each}}
+      {{#each quote in currentPage.quotes}}
+        {{display-quote quote=quote}}
+      {{/each}}
+    </div>
+  {{else}}
+    <div class="page-empty">
+      No pages to view.
+    </div>
+  {{/if}}
 </div>
 
 {{partial "partials/album_navigation"}}
