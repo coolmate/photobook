@@ -1,0 +1,26 @@
+@import "compass";
+@import 'variables';
+
+.album-list {
+  margin: auto;
+  max-width: 400px;
+}
+
+.album-preview {
+  color: black;
+  text-decoration: none;
+  font-family: 'Satisfy', cursive;
+
+  &:hover {
+    color: $color-grey;
+    text-decoration: none;
+  }
+}
+
+.delete-album-button {
+  cursor: pointer;
+
+  &:hover {
+    color: black;
+  }
+}
