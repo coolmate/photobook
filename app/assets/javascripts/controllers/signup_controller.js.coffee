@@ -6,6 +6,12 @@ Photobook.SignupController = Ember.Controller.extend
     @set('signupUser', @store.createRecord('user'))
     @set('loginUser', @store.createRecord('user'))
 
+  deactivate: ->
+    @get('signupUser').rollback()
+    @set 'signupUser', null
+    @get('loginUser').rollback()
+    @set 'loginUser', null
+
   actions:
     signup: ->
       @get('signupUser').save()
