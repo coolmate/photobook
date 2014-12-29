@@ -29,7 +29,7 @@ class PagesController < ApplicationController
     )
     (1..LAYOUTS[page.layout][:num_photos]).each { Photo.create(page: page) }
     (1..LAYOUTS[page.layout][:num_quotes]).each { Quote.create(page: page) }
-    render json: page
+    render json: { page: page }
   end
 
   def destroy
