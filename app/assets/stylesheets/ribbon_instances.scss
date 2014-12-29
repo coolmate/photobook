@@ -1,0 +1,21 @@
+@import "variables";
+
+.ribbon {
+  position: absolute;
+  top: 100px;
+  cursor: pointer;
+  left: 50%;
+}
+
+.prev-button {
+  margin-left: -($page-container-width / 2) - $ribbon-width + $ribbon-offset;
+}
+
+.next-button,
+.new-page-button {
+  margin-left: $page-container-width / 2 - $ribbon-offset;
+}
+
+.new-page-button {
+  top: 220px;
+}
