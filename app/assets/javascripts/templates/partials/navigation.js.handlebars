@@ -1,6 +1,9 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     {{#if currentUser}}
+      <ul class="nav navbar-nav">
+        <li>{{link-to 'Albums' 'albums'}}</li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a href="#"
