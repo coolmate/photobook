@@ -2,7 +2,8 @@
   <div class="container-fluid">
     {{#if currentUser}}
       <ul class="nav navbar-nav">
-        <li>{{link-to 'Albums' 'albums'}}</li>
+        <li>{{link-to 'My Albums' 'albums'}}</li>
+        <li>{{link-to '+Album' 'albums.new'}}</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">

@@ -17,6 +17,7 @@ Photobook.AlbumControls = Ember.Mixin.create
   currentPageNum: 0
 
   currentPage: (->
+    return null unless @get('model.pages.length') > 0
     @get('model.pages').objectAt(@get('currentPageNum'))
   ).property('model.pages.[]', 'currentPageNum')
 
