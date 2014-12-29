@@ -1,17 +1,4 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    {{#if currentUser}}
-      <p class="navbar-text">Signed in as {{currentUser.name}}</p>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#" {{action "logout"}}>Logout</a></li>
-      </ul>
-    {{else}}
-      <ul class="nav navbar-nav navbar-right">
-        <li>{{link-to 'Login' 'signup'}}</li>
-      </ul>
-    {{/if}}
-  </div>
-</nav>
+{{partial "partials/navigation"}}
 
 <div class="container">
   {{outlet}}
