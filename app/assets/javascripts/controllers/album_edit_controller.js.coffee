@@ -19,9 +19,10 @@ Photobook.AlbumEditController = Ember.ObjectController.extend Photobook.AlbumCon
       @send('openLayoutModal')
 
     deletePage: ->
-      page = @get('currentPage')
-      @send('goPrev') if @get('hasPrev')
-      page.destroyRecord()
+      if confirm("Are you sure you want to delete this page?")
+        page = @get('currentPage')
+        @send('goPrev') if @get('hasPrev')
+        page.destroyRecord()
 
     openPhotoModal: (photo) ->
       @set('editingPhoto', photo)
