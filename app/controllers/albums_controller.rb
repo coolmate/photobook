@@ -15,4 +15,13 @@ class AlbumsController < ApplicationController
   def show
     render json: Album.find(params[:id])
   end
+
+  def destroy
+    album = Album.find(params[:id])
+    return head :bad_request unless album
+    return head :unauthorized unless current_user == album.user
+
+    album.destroy
+    render json: {} # Ember blows up unless we return something.
+  end
 end

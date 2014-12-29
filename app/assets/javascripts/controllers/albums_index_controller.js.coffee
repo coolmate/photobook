@@ -1,4 +1,5 @@
 Photobook.AlbumsIndexController = Ember.ArrayController.extend
   actions:
     deleteAlbum: (album) ->
-      console.log 'deleting album', album
+      if confirm("Are you sure you want to delete this album?")
+        album.destroyRecord()
