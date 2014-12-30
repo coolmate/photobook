@@ -1,6 +1,6 @@
 class Page < ActiveRecord::Base
-  has_many :photos
-  has_many :quotes
+  has_many :photos, dependent: :destroy
+  has_many :quotes, dependent: :destroy
   belongs_to :album
 
   def serializable_hash(options = {})
