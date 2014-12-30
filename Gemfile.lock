@@ -82,6 +82,8 @@ GEM
     minitest (5.5.0)
     multi_json (1.10.1)
     pg (0.17.1)
+    qunit-rails (0.0.7)
+      railties
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -117,6 +119,8 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    sinon-rails (1.10.3)
+      railties (>= 3.1)
     spring (1.2.0)
     sprockets (2.12.3)
       hike (~> 1.2)
@@ -150,10 +154,12 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   pg (= 0.17.1)
+  qunit-rails
   rails (= 4.1.8)
   rails_12factor (= 0.0.2)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
+  sinon-rails
   spring
   sqlite3
   turbolinks
