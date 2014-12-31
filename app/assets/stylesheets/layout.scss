@@ -76,3 +76,38 @@
   width: 35%;
   height: 35%;
 }
+
+.layout-4 .photo:nth-child(1) {
+  top: 0;
+  right: 10%;
+  width: 25%;
+  height: 25%;
+}
+
+.layout-4 .photo:nth-child(2) {
+  top: 25%;
+  right: 10%;
+  width: 25%;
+  height: 25%;
+}
+
+.layout-4 .photo:nth-child(3) {
+  top: 50%;
+  right: 10%;
+  width: 25%;
+  height: 25%;
+}
+
+.layout-4 .photo:nth-child(4) {
+  top: 75%;
+  right: 10%;
+  width: 25%;
+  height: 25%;
+}
+
+.layout-4 .quote:nth-child(5) {
+  top: 33%;
+  left: 10%;
+  width: 45%;
+  height: 33%;
+}
