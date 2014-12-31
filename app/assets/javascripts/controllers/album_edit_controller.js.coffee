@@ -1,18 +1,4 @@
 Photobook.AlbumEditController = Ember.ObjectController.extend Photobook.AlbumControls,
-  LAYOUTS: [
-    numPhotos: 2
-    numQuotes: 2
-    id: 1
-  ,
-    numPhotos: 1
-    numQuotes: 0
-    id: 2
-  ,
-    numPhotos: 4
-    numQuotes: 0
-    id: 3
-  ]
-
   editingPhoto   : null
   editingQuote   : null
   selectedLayout : 1

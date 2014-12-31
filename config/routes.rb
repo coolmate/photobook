@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :photos
   resources :quotes
 
+  get 'layouts' => 'layouts#index'
   get 'users/current' => 'users#current'
   resources :users
 
