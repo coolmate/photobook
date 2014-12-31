@@ -14,7 +14,9 @@ Photobook.SignupController = Ember.Controller.extend
 
   actions:
     signup: ->
-      @get('signupUser').save()
+      @get('signupUser').save().then =>
+        @transitionTo('/albums').then ->
+          window.location.reload(true)
 
     login: ->
       $.post('/login',
@@ -22,5 +24,5 @@ Photobook.SignupController = Ember.Controller.extend
           email: @get('loginUser').get('email')
           password: @get('loginUser').get('password')
       ).then (userData) =>
-        @transitionTo('/albums').then =>
+        @transitionTo('/albums').then ->
           window.location.reload(true)
