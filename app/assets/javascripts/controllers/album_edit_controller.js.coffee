@@ -7,6 +7,10 @@ Photobook.AlbumEditController = Ember.ObjectController.extend Photobook.AlbumCon
     numPhotos: 1
     numQuotes: 0
     id: 2
+  ,
+    numPhotos: 4
+    numQuotes: 0
+    id: 3
   ]
 
   editingPhoto   : null

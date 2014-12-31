@@ -48,3 +48,31 @@
   width: 50%;
   height: 80%;
 }
+
+.layout-3 .photo:nth-child(1) {
+  top: 10%;
+  left: 10%;
+  width: 35%;
+  height: 35%;
+}
+
+.layout-3 .photo:nth-child(2) {
+  top: 10%;
+  right: 10%;
+  width: 35%;
+  height: 35%;
+}
+
+.layout-3 .photo:nth-child(3) {
+  bottom: 10%;
+  left: 10%;
+  width: 35%;
+  height: 35%;
+}
+
+.layout-3 .photo:nth-child(4) {
+  bottom: 10%;
+  right: 10%;
+  width: 35%;
+  height: 35%;
+}

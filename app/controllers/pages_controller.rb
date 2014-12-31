@@ -6,6 +6,10 @@ LAYOUTS = {
   2 => {
     num_photos: 1,
     num_quotes: 0
+  },
+  3 => {
+    num_photos: 4,
+    num_quotes: 0
   }
 }
 
