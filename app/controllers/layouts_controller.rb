@@ -19,6 +19,10 @@ class LayoutsController < ApplicationController
     id: 5,
     num_photos: 1,
     num_quotes: 0
+  }, {
+    id: 6,
+    num_photos: 3,
+    num_quotes: 1
   }]
 
   def index
