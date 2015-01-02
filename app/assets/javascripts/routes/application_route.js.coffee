@@ -17,4 +17,4 @@ Photobook.ApplicationRoute = Ember.Route.extend
     logout: ->
       $.ajax('/logout', type: 'DELETE').then =>
         @transitionTo('signup').then =>
-          window.location.reload(true)
+          Photobook.Window.reload()
