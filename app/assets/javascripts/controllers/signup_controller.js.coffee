@@ -19,10 +19,15 @@ Photobook.SignupController = Ember.Controller.extend
           Photobook.Window.reload()
 
     login: ->
-      jQuery.post('/login',
-        session:
-          email: @get('loginUser').get('email')
-          password: @get('loginUser').get('password')
+      jQuery.ajax(
+        type: 'POST'
+        url: '/login'
+        contentType: 'application/json'
+        data: JSON.stringify(
+          session:
+            email: @get('loginUser').get('email')
+            password: @get('loginUser').get('password')
+        )
       ).then (userData) =>
         @transitionTo('/albums').then ->
           Photobook.Window.reload()
