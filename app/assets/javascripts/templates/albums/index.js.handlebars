@@ -1,5 +1,5 @@
-{{#each album in model}}
-  <ul class="list-group album-list">
+<ul class="list-group album-list">
+  {{#each album in model}}
     <li class="list-group-item">
       {{link-to album.name 'album.edit' album class="album-preview"}}
       <span class="badge delete-album-button"
@@ -9,7 +9,7 @@
               aria-hidden="true"></span>
       </span>
     </li>
-  </ul>
-{{else}}
-  You have no albums. {{link-to 'Create an album!' 'albums.new'}}
-{{/each}}
+  {{else}}
+    You have no albums. {{link-to 'Create an album!' 'albums.new'}}
+  {{/each}}
+</ul>
