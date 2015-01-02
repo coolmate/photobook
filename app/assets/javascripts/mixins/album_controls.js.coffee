@@ -10,6 +10,17 @@ Photobook.AlbumControls = Ember.Mixin.create
     value: 'oval'
   ]
 
+  QUOTE_JUSTIFY: [
+    name: 'Left'
+    value: null
+  ,
+    name: 'Right'
+    value: 'right'
+  ,
+    name: 'Center'
+    value: 'center'
+  ]
+
   albumClassNames: (->
     "js-page layout-#{@get('currentPage.layout')}"
   ).property('currentPage.layout')
