@@ -27,6 +27,11 @@ Photobook.AlbumControls = Ember.Mixin.create
 
   hasPrev: Ember.computed.gt('currentPageNum', 0)
 
+  # TODO: Figure out why application route injection isn't working.
+  LAYOUTS: (->
+    @container.lookup('layouts:all')
+  ).property()
+
   actions:
     goNext: ->
       $('.js-page').fadeOut().promise().done =>
