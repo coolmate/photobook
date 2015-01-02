@@ -12,9 +12,13 @@ class PhotosController < ApplicationController
     return head :bad_request unless photo
     return head :unauthorized unless current_user == photo.page.album.user
 
-    photo.url = params['photo']['url']
-    photo.shape = params['photo']['shape']
-    photo.save!
+    photo.update_attributes(update_params)
     render json: photo
+  end
+
+  private
+
+  def update_params
+    params.require(:photo).permit(:url, :shape)
   end
 end
