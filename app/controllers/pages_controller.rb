@@ -27,12 +27,12 @@ class PagesController < ApplicationController
     return head :bad_request unless album
     return head :unauthorized unless current_user == album.user
 
-    page = Page.create(
+    page = Page.create!(
       album: album,
       layout: params[:page][:layout]
     )
-    (1..LayoutsController::LAYOUTS[page.layout-1][:num_photos]).each { Photo.create(page: page) }
-    (1..LayoutsController::LAYOUTS[page.layout-1][:num_quotes]).each { Quote.create(page: page) }
+    (1..LayoutsController::LAYOUTS[page.layout-1][:num_photos]).each { Photo.create!(page: page) }
+    (1..LayoutsController::LAYOUTS[page.layout-1][:num_quotes]).each { Quote.create!(page: page) }
     render json: { page: page }
   end
 

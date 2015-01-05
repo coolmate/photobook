@@ -12,7 +12,7 @@ class QuotesController < ApplicationController
     return head :bad_request unless quote
     return head :unauthorized unless current_user == quote.page.album.user
 
-    quote.update_attributes(update_params)
+    quote.update_attributes!(update_params)
     render json: quote
   end
 

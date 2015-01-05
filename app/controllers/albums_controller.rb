@@ -9,7 +9,7 @@ class AlbumsController < ApplicationController
 
   def create
     return head :unauthorized unless logged_in?
-    render json: Album.create(name: params[:album][:name], user: current_user)
+    render json: Album.create!(name: params[:album][:name], user: current_user)
   end
 
   def show

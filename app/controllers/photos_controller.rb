@@ -12,7 +12,7 @@ class PhotosController < ApplicationController
     return head :bad_request unless photo
     return head :unauthorized unless current_user == photo.page.album.user
 
-    photo.update_attributes(update_params)
+    photo.update_attributes!(update_params)
     render json: photo
   end
 
