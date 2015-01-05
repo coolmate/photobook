@@ -8,19 +8,19 @@ module 'root',
     @server.restore()
     Photobook.reset()
 
-test 'redirects to signup page when logged out', ->
+test 'when logged out', ->
   expect 1
 
   @server.respondWith 'GET', '/users/current', JSON.stringify({})
   visit '/'
   andThen ->
-    equal currentURL(), '/signup'
+    equal currentURL(), '/signup', 'goes to signup page'
 
-test 'redirects to albums page when logged in', ->
+test 'when logged in', ->
   expect 1
 
   respondWithUser @server
   respondWithAlbums @server
   visit '/'
   andThen ->
-    equal currentURL(), '/albums'
+    equal currentURL(), '/albums', 'goes to albums page'

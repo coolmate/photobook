@@ -8,7 +8,7 @@ module 'albums',
     @server.restore()
     Photobook.reset()
 
-test 'lists all albums when albums exist', ->
+test 'when albums exist', ->
   expect 2
 
   respondWithUser @server
@@ -19,26 +19,26 @@ test 'lists all albums when albums exist', ->
   ]
   visit '/albums'
   andThen ->
-    equal find('.album-list .list-group-item').length, 3
+    equal find('.album-list .list-group-item').length, 3, 'shows all albums'
 
   click 'a:contains(My Album Two)'
   andThen ->
-    equal currentURL(), '/album/2/edit'
+    equal currentURL(), '/album/2/edit', 'goes to the edit album page'
 
-test 'shows a call to action when no albums exist', ->
+test 'when no albums exist', ->
   expect 5
 
   respondWithUser @server
   respondWithAlbums @server, []
   visit '/albums'
   andThen ->
-    equal find('.album-list .list-group-item').length, 0
+    equal find('.album-list .list-group-item').length, 0, 'shows no albums'
     equal find('.album-list').text().trim(),
-        "You have no albums. Create an album!"
+        'You have no albums. Create an album!', 'shows a call to action'
 
   click 'a:contains(Create an album)'
   andThen ->
-    equal currentURL(), '/albums/new'
+    equal currentURL(), '/albums/new', 'goes to the new album page'
 
   request =
     name: 'My Album'

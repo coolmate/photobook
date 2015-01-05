@@ -14,4 +14,5 @@ Ember.Test.registerHelper 'hasRequest', (app, server, method, url, data) ->
     .filterBy('method', method)
     .filterBy('url', url)
   throw "No such request: #{method}, #{url}" unless requests.length > 0
-  deepEqual JSON.parse(requests[0].requestBody), data
+  deepEqual JSON.parse(requests[0].requestBody), data,
+    'makes a request to the server'

@@ -28,8 +28,8 @@ test 'allows signing up', ->
   click '.btn:contains(Sign Up)'
   andThen =>
     hasRequest @server, 'POST', '/users', user: request
-    equal currentURL(), '/albums'
-    ok @windowSpy.called
+    equal currentURL(), '/albums', 'goes to the albums page'
+    ok @windowSpy.called, 'reloads the page'
 
 test 'allows logging in', ->
   expect 3
@@ -45,5 +45,5 @@ test 'allows logging in', ->
   click '.btn:contains(Log In)'
   andThen =>
     hasRequest @server, 'POST', '/login', session: request
-    equal currentURL(), '/albums'
-    ok @windowSpy.called
+    equal currentURL(), '/albums', 'goes to the albums page'
+    ok @windowSpy.called, 'reloads the page'
