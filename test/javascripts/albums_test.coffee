@@ -26,7 +26,7 @@ test 'when albums exist', ->
     equal currentURL(), '/album/2/edit', 'goes to the edit album page'
 
 test 'when no albums exist', ->
-  expect 5
+  expect 3
 
   respondWithUser @server
   respondWithAlbums @server, []
@@ -39,15 +39,3 @@ test 'when no albums exist', ->
   click 'a:contains(Create an album)'
   andThen ->
     equal currentURL(), '/albums/new', 'goes to the new album page'
-
-  request =
-    name: 'My Album'
-    pages: []
-  @server.respondWith 'POST', '/albums',
-    JSON.stringify(album: { id: 3, name: request.name, pages: request.pages })
-
-  fillIn '#album-name', 'My Album'
-  click 'button:contains(Create Album)'
-  andThen =>
-    hasRequest @server, 'POST', '/albums', album: request
-    equal currentURL(), '/album/3/edit', 'redirects to the new album'
