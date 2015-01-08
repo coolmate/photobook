@@ -12,7 +12,7 @@ module 'signup',
     Photobook.reset()
 
 test 'allows signing up', ->
-  expect 3
+  expect 6
 
   request =
     name: 'Finn the Human'
@@ -22,8 +22,21 @@ test 'allows signing up', ->
     JSON.stringify({ name: request.name, email: request.email })
 
   visit '/signup'
+
+  click '.btn:contains(Sign Up)'
+  andThen =>
+    hasWarningMessage 'Please enter a name.'
+
   fillIn '.form-signup input[placeholder=Name]', request.name
+  click '.btn:contains(Sign Up)'
+  andThen =>
+    hasWarningMessage 'Please enter an email.'
+
   fillIn '.form-signup input[placeholder=Email]', request.email
+  click '.btn:contains(Sign Up)'
+  andThen =>
+    hasWarningMessage 'Please enter a password.'
+
   fillIn '.form-signup input[placeholder=Password]', request.password
   click '.btn:contains(Sign Up)'
   andThen =>
@@ -32,15 +45,24 @@ test 'allows signing up', ->
     ok @windowSpy.called, 'reloads the page'
 
 test 'allows logging in', ->
-  expect 3
+  expect 5
 
   request =
     email: 'finn@example.com'
     password: 'mAtheMatical!'
   @server.respondWith 'POST', '/login',
     JSON.stringify({ email: request.email, password: request.password })
+
   visit '/signup'
+  click '.btn:contains(Log In)'
+  andThen =>
+    hasWarningMessage 'Please enter an email.'
+
   fillIn '.form-login input[placeholder=Email]', request.email
+  click '.btn:contains(Log In)'
+  andThen =>
+    hasWarningMessage 'Please enter a password.'
+
   fillIn '.form-login input[placeholder=Password]', request.password
   click '.btn:contains(Log In)'
   andThen =>

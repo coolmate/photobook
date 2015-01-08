@@ -1,4 +1,10 @@
 <div class="row">
+  {{#if displayError}}
+    <div class="alert alert-danger" role="alert">
+      {{displayError}}
+    </div>
+  {{/if}}
+
   <div class="col-md-6 form-signup-container">
     <form class="form-signup">
       <h2>Sign Up</h2>
