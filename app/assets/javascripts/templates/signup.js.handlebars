@@ -1,48 +1,46 @@
-<div class="row">
-  {{#if displayError}}
-    <div class="alert alert-danger" role="alert">
-      {{displayError}}
-    </div>
-  {{/if}}
+{{#if displayError}}
+  <div class="alert alert-danger" role="alert">
+    {{displayError}}
+  </div>
+{{/if}}
 
-  <div class="col-md-6 form-signup-container">
-    <form class="form-signup">
-      <h2>Sign Up</h2>
-      {{input type="text"
-              class="form-control"
-              value=signupUser.name
-              placeholder="Name"}}
-      {{input type="email"
-              class="form-control"
-              value=signupUser.email
-              placeholder="Email"}}
-      {{input type="password"
-              class="form-control"
-              value=signupUser.password
-              placeholder="Password"}}
-      <button type="submit"
-              class="btn btn-lg btn-success btn-block"
-              {{action "signup"}}>
-        Sign Up
-      </button>
-    </form>
-  </div>
-  <div class="col-md-6 form-login-container">
-    <form class="form-login">
-      <h2>Log In</h2>
-      {{input type="email"
-              class="form-control"
-              value=loginUser.email
-              placeholder="Email"}}
-      {{input type="password"
-              class="form-control"
-              value=loginUser.password
-              placeholder="Password"}}
-      <button type="submit"
-              class="btn btn-lg btn-primary btn-block"
-              {{action "login"}}>
-        Log In
-      </button>
-    </form>
-  </div>
+<div class="col-md-6 form-signup-container">
+  <form class="form-signup">
+    <h2>Sign Up</h2>
+    {{input type="text"
+            class="form-control"
+            value=signupUser.name
+            placeholder="Name"}}
+    {{input type="email"
+            class="form-control"
+            value=signupUser.email
+            placeholder="Email"}}
+    {{input type="password"
+            class="form-control"
+            value=signupUser.password
+            placeholder="Password"}}
+    <button type="submit"
+            class="btn btn-lg btn-success btn-block"
+            {{action "signup"}}>
+      Sign Up
+    </button>
+  </form>
+</div>
+<div class="col-md-6 form-login-container">
+  <form class="form-login">
+    <h2>Log In</h2>
+    {{input type="email"
+            class="form-control"
+            value=loginUser.email
+            placeholder="Email"}}
+    {{input type="password"
+            class="form-control"
+            value=loginUser.password
+            placeholder="Password"}}
+    <button type="submit"
+            class="btn btn-lg btn-primary btn-block"
+            {{action "login"}}>
+      Log In
+    </button>
+  </form>
 </div>
