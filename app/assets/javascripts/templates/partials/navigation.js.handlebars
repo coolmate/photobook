@@ -15,6 +15,7 @@
              {{currentUser.name}} <span class="caret"></span>
           </a>
           <ul class="dropdown-menu" role="menu">
+            <li>{{link-to 'Profile' 'profile'}}</li>
             <li><a href="#" {{action "logout"}}>Logout</a></li>
           </ul>
         </li>

@@ -22,3 +22,9 @@ Ember.Test.registerHelper 'hasNoWarningMessage', (app, message) ->
 
 Ember.Test.registerHelper 'hasWarningMessage', (app, message) ->
   equal find('.alert-danger').text().trim(), message, 'shows a warning message'
+
+Ember.Test.registerHelper 'findInputByLabel', (app, label) ->
+  find "label:contains(#{label}) + div input"
+
+Ember.Test.registerHelper 'fillInByLabel', (app, label, value) ->
+  fillIn "label:contains(#{label}) + div input", value

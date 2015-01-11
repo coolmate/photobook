@@ -6,10 +6,11 @@ Photobook.ApplicationRoute = Ember.Route.extend
 
     userPromise = jQuery.getJSON('/users/current').then (userData) =>
       if userData.user
-        user = Ember.Object.create(userData.user)
-        @container.register('user:current', user, {instantiate: false, singleton: true})
-        @container.injection('route', 'currentUser', 'user:current')
-        @container.injection('controller', 'currentUser', 'user:current')
+        Ember.run =>
+          user = @store.push('user', userData.user)
+          @container.register('user:current', user, {instantiate: false, singleton: true})
+          @container.injection('route', 'currentUser', 'user:current')
+          @container.injection('controller', 'currentUser', 'user:current')
 
     Ember.RSVP.all [layoutPromise, userPromise]
 
