@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150102080514) do
+ActiveRecord::Schema.define(version: 20150111224206) do
 
   create_table "albums", force: true do |t|
     t.integer "user_id"
-    t.string  "name"
+    t.string  "name",    null: false
   end
 
   create_table "pages", force: true do |t|
     t.integer "album_id"
-    t.integer "layout"
+    t.integer "layout",   null: false
   end
 
   create_table "photos", force: true do |t|
@@ -36,9 +36,9 @@ ActiveRecord::Schema.define(version: 20150102080514) do
   end
 
   create_table "users", force: true do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
+    t.string "name",            null: false
+    t.string "email",           null: false
+    t.string "password_digest", null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
