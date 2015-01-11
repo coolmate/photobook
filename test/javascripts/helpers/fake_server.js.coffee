@@ -16,15 +16,3 @@ Ember.Test.registerHelper 'hasRequest', (app, server, method, url, data) ->
   throw "No such request: #{method}, #{url}" unless requests.length > 0
   deepEqual JSON.parse(requests[0].requestBody), data,
     'makes a request to the server'
-
-Ember.Test.registerHelper 'hasNoWarningMessage', (app, message) ->
-  equal find('.alert-danger').length, 0, 'shows no warning messages'
-
-Ember.Test.registerHelper 'hasWarningMessage', (app, message) ->
-  equal find('.alert-danger').text().trim(), message, 'shows a warning message'
-
-Ember.Test.registerHelper 'findInputByLabel', (app, label) ->
-  find "label:contains(#{label}) + div input"
-
-Ember.Test.registerHelper 'fillInByLabel', (app, label, value) ->
-  fillIn "label:contains(#{label}) + div input", value
