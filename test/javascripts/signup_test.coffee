@@ -11,7 +11,7 @@ module 'signup',
     @server.restore()
     Photobook.reset()
 
-test 'allows signing up', ->
+test 'signing up', ->
   expect 6
 
   request =
@@ -44,7 +44,7 @@ test 'allows signing up', ->
     equal currentURL(), '/albums', 'goes to the albums page'
     ok @windowSpy.called, 'reloads the page'
 
-test 'allows logging in', ->
+test 'logging in', ->
   expect 5
 
   request =
@@ -68,4 +68,18 @@ test 'allows logging in', ->
   andThen =>
     hasRequest @server, 'POST', '/login', session: request
     equal currentURL(), '/albums', 'goes to the albums page'
+    ok @windowSpy.called, 'reloads the page'
+
+test 'logging out', ->
+  expect 3
+
+  respondWithUser @server
+  respondWithAlbums @server, []
+  @server.respondWith 'DELETE', '/logout', JSON.stringify({})
+
+  visit '/'
+  click 'a:contains(Logout)'
+  andThen =>
+    hasRequest @server, 'DELETE', '/logout', null
+    equal currentURL(), '/signup', 'goes to login page'
     ok @windowSpy.called, 'reloads the page'
