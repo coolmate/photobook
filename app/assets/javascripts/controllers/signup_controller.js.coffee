@@ -1,4 +1,5 @@
-Photobook.SignupController = Ember.Controller.extend Photobook.ValidatedControllerMixin,
+Photobook.SignupController = Ember.Controller.extend(
+    Photobook.ValidatedControllerMixin,
   signupUser: null
   loginUser: null
 
@@ -15,14 +16,14 @@ Photobook.SignupController = Ember.Controller.extend Photobook.ValidatedControll
   actions:
     signup: ->
       user = @get('signupUser')
-      @validate(user)
+      @validateModel(user)
       .then => user.save()
       .then => @transitionToRoute('/albums')
       .then -> Photobook.Window.reload()
 
     login: ->
       user = @get('loginUser')
-      @validate(user)
+      @validateModel(user)
       .then(=>
         jQuery.ajax(
           type: 'POST'
@@ -36,3 +37,15 @@ Photobook.SignupController = Ember.Controller.extend Photobook.ValidatedControll
         )
       ).then (userData) => @transitionToRoute('/albums')
       .then -> Photobook.Window.reload()
+
+  validations:
+    name:
+      presence:
+        message: "Please enter a name."
+    email:
+      presence:
+        message: "Please enter an email."
+    password:
+      presence:
+        message: "Please enter a password."
+)

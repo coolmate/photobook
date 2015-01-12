@@ -2,6 +2,6 @@ Photobook.AlbumsNewController = Ember.ObjectController.extend Photobook.Validate
   actions:
     save: ->
       model = @get('model')
-      @validate(model)
+      @validateModel(model)
       .then => model.save()
       .then => @transitionToRoute 'album.edit', model

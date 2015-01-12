@@ -4,7 +4,7 @@ Photobook.ValidatedControllerMixin = Ember.Mixin.create
   # Calls `validate` on the given model.
   # If invalid, sets `displayError` to the validation error message.
   # Returns a promise that succeeds when the model validates.
-  validate: (model) ->
+  validateModel: (model) ->
     model.validate().then(=>
       @set 'displayError', null
       Ember.RSVP.Promise.resolve(model)

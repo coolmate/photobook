@@ -4,7 +4,3 @@ Photobook.ProfileRoute = Ember.Route.extend
 
   deactivate: ->
     @modelFor(@routeName).rollback()
-
-  actions:
-    save: ->
-      @modelFor(@routeName).save()

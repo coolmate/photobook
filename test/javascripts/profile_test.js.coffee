@@ -20,7 +20,7 @@ test 'viewing profile', ->
     equal findInputByLabel('Email').val(), 'test@example.com', 'shows email'
 
 test 'updating profile, no new password', ->
-  expect 1
+  expect 2
 
   respondWithUser @server
   respondWithAlbums @server, []
@@ -40,9 +40,10 @@ test 'updating profile, no new password', ->
       user:
         name: 'New Name'
         email: 'newemail@example.com'
+    hasSuccessMessage 'Profile saved successfully.'
 
 test 'updating profile, new password', ->
-  expect 1
+  expect 2
 
   respondWithUser @server
   respondWithAlbums @server, []
@@ -63,3 +64,21 @@ test 'updating profile, new password', ->
         name: 'Test User'
         email: 'test@example.com'
         password: 'newpassword'
+    hasSuccessMessage 'Profile saved successfully.'
+
+test 'validations', ->
+  expect 2
+
+  respondWithUser @server
+  respondWithAlbums @server, []
+
+  visit '/profile'
+  fillInByLabel 'Email', ''
+  click 'button:contains(Save)'
+  andThen =>
+    hasWarningMessage 'Please enter an email.'
+
+  fillInByLabel 'Name', ''
+  click 'button:contains(Save)'
+  andThen =>
+    hasWarningMessage 'Please enter a name.'

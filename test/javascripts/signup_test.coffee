@@ -19,7 +19,7 @@ test 'allows signing up', ->
     email: 'finn@example.com'
     password: 'mAtheMatical!'
   @server.respondWith 'POST', '/users',
-    JSON.stringify({ name: request.name, email: request.email })
+    JSON.stringify(user: { name: request.name, email: request.email })
 
   visit '/signup'
 
@@ -51,7 +51,7 @@ test 'allows logging in', ->
     email: 'finn@example.com'
     password: 'mAtheMatical!'
   @server.respondWith 'POST', '/login',
-    JSON.stringify({ email: request.email, password: request.password })
+    JSON.stringify(user: { email: request.email, password: request.password })
 
   visit '/signup'
   click '.btn:contains(Log In)'
