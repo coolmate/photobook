@@ -1,10 +1,6 @@
 class AlbumsController < ApplicationController
   def index
-    if current_user
-      render json: Album.where(user: current_user)
-    else
-      render json: []
-    end
+    render json: Album.where(user_id: params[:user_id])
   end
 
   def create

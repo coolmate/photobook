@@ -1,3 +1,4 @@
 Photobook.AlbumsIndexRoute = Ember.Route.extend
   model: ->
-    @store.find('album')
+    user = @container.lookup('user:current')
+    @store.find('album', user_id: user.get('id'))

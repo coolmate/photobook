@@ -7,7 +7,7 @@ Ember.Test.registerHelper 'respondWithLayouts', (app, server) ->
   server.respondWith 'GET', '/layouts', JSON.stringify({ layouts: [] })
 
 Ember.Test.registerHelper 'respondWithAlbums', (app, server, albums=[]) ->
-  server.respondWith 'GET', '/albums', JSON.stringify({ albums: albums })
+  server.respondWith 'GET', '/albums?user_id=1', JSON.stringify({ albums: albums })
 
 Ember.Test.registerHelper 'hasRequest', (app, server, method, url, data) ->
   requests = server.requests
