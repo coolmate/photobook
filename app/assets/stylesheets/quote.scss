@@ -6,8 +6,13 @@
   font-size: 2em;
   line-height: 1.5em;
   overflow: hidden;
-  padding: 20px;
   position: absolute;
+
+  /* Add padding, except in preview. */
+  padding: 20px;
+  .layout-preview & {
+    padding: 0;
+  }
 
   .quote--content {
     /* Vertically center text. */
@@ -21,7 +26,7 @@
   }
 
   &.is-empty {
-    border: 1px dashed $color-grey;
+    border: 1px dashed $color-gold;
   }
 }
 

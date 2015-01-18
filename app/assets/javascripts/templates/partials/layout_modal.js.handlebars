@@ -11,7 +11,7 @@
       <div class="modal-body">
         {{#each layout in LAYOUTS itemController="layoutPreview"}}
           <div {{bind-attr class=":layout-preview layout.isSelected"}} {{action "selectLayout" layout.id}}>
-            {{layout-preview layout.numPhotos layout.id action="closeLayoutModal"}}
+            {{layout-preview layout.numPhotos layout.numQuotes layout.id action="closeLayoutModal"}}
           </div>
         {{/each}}
       </div>
