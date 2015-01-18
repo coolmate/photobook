@@ -14,6 +14,17 @@
   &.is-empty {
     border: 1px dashed $color-grey;
   }
+
+  .edit-button {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    display: none;
+  }
+
+  &:hover .edit-button {
+    display: block;
+  }
 }
 
 .photo-oval {

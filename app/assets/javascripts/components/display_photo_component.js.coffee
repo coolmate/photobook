@@ -18,6 +18,3 @@ Photobook.DisplayPhotoComponent = Ember.Component.extend
     else
       ""
   ).property('photo.url')
-
-  click: ->
-    @sendAction('action', @get('photo'))

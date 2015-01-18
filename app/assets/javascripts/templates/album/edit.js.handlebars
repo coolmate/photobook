@@ -7,7 +7,13 @@
     </div>
     <div {{bind-attr class="albumClassNames"}}>
       {{#each photo in currentPage.photos}}
-        {{display-photo photo=photo action="openPhotoModal" class="is-edit"}}
+        {{#display-photo photo=photo class="is-edit"}}
+          <button type="button"
+                  class="btn btn-primary edit-button"
+                  {{action "openPhotoModal" photo}}>
+            Edit
+          </button>
+        {{/display-photo}}
       {{/each}}
       {{#each quote in currentPage.quotes}}
         {{display-quote quote=quote action="openQuoteModal" class="is-edit"}}
