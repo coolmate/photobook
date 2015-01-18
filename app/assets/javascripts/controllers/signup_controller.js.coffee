@@ -18,7 +18,9 @@ Photobook.SignupController = Ember.Controller.extend(
       user = @get('signupUser')
       @validateModel(user)
       .then => user.save()
-      .then => @transitionToRoute('/albums')
+      .then (newUser) =>
+        @container.register('user:current', newUser, {instantiate: false, singleton: true})
+        @transitionToRoute('/albums')
       .then -> Photobook.Window.reload()
 
     login: ->
@@ -27,6 +29,7 @@ Photobook.SignupController = Ember.Controller.extend(
       .then(=>
         jQuery.ajax(
           type: 'POST'
+          dataType: 'json'
           url: '/login'
           contentType: 'application/json'
           data: JSON.stringify(
@@ -35,7 +38,10 @@ Photobook.SignupController = Ember.Controller.extend(
               password: user.get('password')
           )
         )
-      ).then (userData) => @transitionToRoute('/albums')
+      ).then (userData) =>
+        user.set 'id', userData.user.id
+        @container.register('user:current', user, {instantiate: false, singleton: true})
+        @transitionToRoute('/albums')
       .then -> Photobook.Window.reload()
 
   validations:

@@ -8,6 +8,14 @@ module 'albums',
     @server.restore()
     Photobook.reset()
 
+test 'when logged out', ->
+  expect 1
+
+  @server.respondWith 'GET', '/users/current', JSON.stringify({})
+  visit '/albums'
+  andThen ->
+    equal currentURL(), '/signup', 'routes to signup page'
+
 test 'when albums exist', ->
   expect 2
 
