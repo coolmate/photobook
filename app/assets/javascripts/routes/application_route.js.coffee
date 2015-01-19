@@ -4,7 +4,7 @@ Photobook.ApplicationRoute = Ember.Route.extend
       @container.register('layouts:all', layout, {instantiate: false, singleton: true});
       @container.injection('controller', 'LAYOUTS', 'layouts:all')
 
-    userPromise = jQuery.getJSON('/users/current').then (userData) =>
+    userPromise = $.getJSON('/users/current').then (userData) =>
       if userData.user
         Ember.run =>
           user = @store.push('user', userData.user)

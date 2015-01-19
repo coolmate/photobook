@@ -27,7 +27,7 @@ Photobook.SignupController = Ember.Controller.extend(
       user = @get('loginUser')
       @validateModel(user)
       .then(=>
-        jQuery.ajax(
+        $.ajax(
           type: 'POST'
           dataType: 'json'
           url: '/login'
