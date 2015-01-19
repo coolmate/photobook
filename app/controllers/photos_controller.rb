@@ -19,6 +19,6 @@ class PhotosController < ApplicationController
   private
 
   def update_params
-    params.require(:photo).permit(:url, :shape)
+    params.require(:photo).permit(:url, :shape, :offset_left, :offset_top)
   end
 end

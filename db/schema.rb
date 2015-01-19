@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150111224206) do
+ActiveRecord::Schema.define(version: 20150119053517) do
 
   create_table "albums", force: true do |t|
     t.integer "user_id"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20150111224206) do
     t.integer "page_id"
     t.string  "url"
     t.string  "shape"
+    t.integer "offset_left", default: 0
+    t.integer "offset_top",  default: 0
   end
 
   create_table "quotes", force: true do |t|
