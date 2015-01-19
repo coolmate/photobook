@@ -3,6 +3,16 @@ Photobook.AlbumEditController = Ember.ObjectController.extend Photobook.AlbumCon
   editingQuote   : null
   selectedLayout : 1
 
+  # Reset offsets to 0 when changing photo URL.
+  photoUrl: ((key, value) ->
+    unless value is undefined
+      @get('editingPhoto').setProperties
+        url: value
+        offsetTop: 0
+        offsetLeft: 0
+    return @get('editingPhoto.url')
+  ).property('editingPhoto.url')
+
   actions:
     newPage: ->
       return unless @get('isLoaded')

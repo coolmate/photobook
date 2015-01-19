@@ -45,8 +45,11 @@ Photobook.DisplayPhotoComponent = Ember.Component.extend
   enableImageDragging: (photoEl) ->
     return unless @get('isEdit')
 
-    # TODO: Constrain dragging
+    # Only allow dragging along the axis that isn't stretched to full width.
+    axis = if @get('coverWidth') is '100%' then 'y' else 'x'
+
     photoEl.draggable
+      axis: axis
       stop: (event, info) =>
         leftPx = Math.floor(info.position.left)
         topPx = Math.floor(info.position.top)
