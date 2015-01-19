@@ -7,7 +7,7 @@
     </div>
     <div {{bind-attr class="albumClassNames"}}>
       {{#each photo in currentPage.photos}}
-        {{#display-photo photo=photo class="is-edit"}}
+        {{#display-photo photo=photo isEdit=true}}
           <button type="button"
                   class="btn btn-primary edit-button"
                   {{action "openPhotoModal" photo}}>

@@ -1,14 +1,11 @@
 @import 'variables';
 
 .photo {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-
+  overflow: hidden;
   position: absolute;
 
   &.is-edit {
-    cursor: pointer;
+    cursor: move;
   }
 
   &.is-empty {
@@ -25,6 +22,10 @@
   &:hover .edit-button {
     display: block;
   }
+}
+
+.photo-img {
+  position: absolute;
 }
 
 .photo-oval {
