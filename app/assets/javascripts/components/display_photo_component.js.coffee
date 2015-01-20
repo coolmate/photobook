@@ -7,14 +7,14 @@ Photobook.DisplayPhotoComponent = Ember.Component.extend
   coverWidth: null
   coverHeight: null
 
-  didInsertElement: ->
-    @_super()
+  photoUrlChanged: (->
     return unless @get('photo.url')
 
     photoEl = @$('img')
-    photoEl.load => # Runs every time the photo URL is changed.
+    photoEl.one 'load', =>
       @setImageSizeToCover $(@element), photoEl
       @enableImageDragging photoEl
+  ).observes('photo.url').on('didInsertElement')
 
   classNameBindings: ['photoClassName', 'shapeClassName', 'isEmpty', 'isEdit']
   photoClassName: 'photo'
