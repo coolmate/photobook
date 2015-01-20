@@ -53,4 +53,5 @@ end
 group :development, :test do
   gem 'qunit-rails'
   gem 'sinon-rails'
+  gem 'rspec-rails'
 end
