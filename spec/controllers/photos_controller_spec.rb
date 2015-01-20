@@ -25,4 +25,52 @@ describe PhotosController do
       expect(json_response['photo']['url']).to eq('http://localhost/img1.gif')
     end
   end
+
+  describe 'PUT update' do
+    let(:user) { User.create(
+      name: 'Test User',
+      email: 'test@example.com',
+      password: 'password'
+    ) }
+    let(:album) { Album.create(user: user, name: 'My Album') }
+    let(:page) { Page.create(album: album, layout: 1) }
+    let(:photo) { Photo.create(url: 'http://localhost/old.png', page: page) }
+
+    subject {
+      put :update, {
+        id: photo.id,
+        photo: {
+          url: 'http://localhost/new.png',
+          shape: 'rounded',
+          offset_left: -10,
+          offset_top: 0
+        }
+      }
+    }
+
+    describe 'when user is logged out' do
+      it 'has status 401' do
+        subject
+        expect(response).to have_http_status(401)
+      end
+    end
+
+    describe 'when user is logged in' do
+      before do
+        ApplicationController.any_instance.stub(current_user: user)
+      end
+
+      it 'updates all attributes' do
+        subject
+
+        expect(response.status).to eq(200)
+
+        photo.reload
+        expect(photo.url).to eq('http://localhost/new.png')
+        expect(photo.shape).to eq('rounded')
+        expect(photo.offset_left).to eq(-10)
+        expect(photo.offset_top).to eq(0)
+      end
+    end
+  end
 end
