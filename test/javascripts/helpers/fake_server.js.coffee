@@ -9,6 +9,9 @@ Ember.Test.registerHelper 'respondWithLayouts', (app, server) ->
 Ember.Test.registerHelper 'respondWithAlbums', (app, server, albums=[]) ->
   server.respondWith 'GET', '/albums?user_id=1', JSON.stringify({ albums: albums })
 
+Ember.Test.registerHelper 'respondWithAlbum', (app, server, album) ->
+  server.respondWith 'GET', "/albums/#{album.id}", JSON.stringify({ album: album })
+
 Ember.Test.registerHelper 'hasRequest', (app, server, method, url, data) ->
   requests = server.requests
     .filterBy('method', method)
