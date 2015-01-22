@@ -3,6 +3,8 @@ module 'profile',
     @server = sinon.fakeServer.create()
     @server.autoRespond = yes
     respondWithLayouts @server
+    respondWithUser @server
+    respondWithAlbums @server, []
 
   teardown: ->
     @server.restore()
@@ -11,9 +13,6 @@ module 'profile',
 test 'viewing profile', ->
   expect 2
 
-  respondWithUser @server
-  respondWithAlbums @server, []
-
   visit '/profile'
   andThen ->
     equal findInputByLabel('Name').val(), 'Test User', 'shows name'
@@ -21,9 +20,6 @@ test 'viewing profile', ->
 
 test 'updating profile, no new password', ->
   expect 2
-
-  respondWithUser @server
-  respondWithAlbums @server, []
 
   @server.respondWith 'PUT', '/users/1', JSON.stringify(user: {
     id: 1
@@ -45,9 +41,6 @@ test 'updating profile, no new password', ->
 test 'updating profile, new password', ->
   expect 2
 
-  respondWithUser @server
-  respondWithAlbums @server, []
-
   @server.respondWith 'PUT', '/users/1', JSON.stringify(user: {
     id: 1
     name: 'Test User'
@@ -68,9 +61,6 @@ test 'updating profile, new password', ->
 
 test 'validations', ->
   expect 2
-
-  respondWithUser @server
-  respondWithAlbums @server, []
 
   visit '/profile'
   fillInByLabel 'Email', ''

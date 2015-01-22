@@ -5,7 +5,6 @@ module 'signup',
     @server.autoRespond = yes
     respondWithLayouts @server
     respondWithAlbums @server
-    @server.respondWith 'GET', '/users/current', JSON.stringify({})
 
   teardown: ->
     @server.restore()
@@ -13,6 +12,8 @@ module 'signup',
 
 test 'signing up', ->
   expect 6
+
+  @server.respondWith 'GET', '/users/current', JSON.stringify({})
 
   request =
     name: 'Finn the Human'
@@ -47,6 +48,8 @@ test 'signing up', ->
 test 'logging in', ->
   expect 5
 
+  @server.respondWith 'GET', '/users/current', JSON.stringify({})
+
   request =
     email: 'finn@example.com'
     password: 'mAtheMatical!'
@@ -74,7 +77,6 @@ test 'logging out', ->
   expect 3
 
   respondWithUser @server
-  respondWithAlbums @server, []
   @server.respondWith 'DELETE', '/logout', JSON.stringify({})
 
   visit '/'
