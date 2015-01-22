@@ -1,3 +1,4 @@
+@import 'compass/css3';
 @import 'variables';
 
 .photo {
@@ -26,6 +27,12 @@
 
 .photo-img {
   position: absolute;
+  opacity: 0;
+  @include transition(opacity 0.5s);
+
+  &.is-loaded {
+    opacity: 1;
+  }
 }
 
 .photo-oval {
