@@ -11,12 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150119053517) do
+ActiveRecord::Schema.define(version: 20150125211810) do
 
   create_table "albums", force: true do |t|
     t.integer "user_id"
     t.string  "name",    null: false
+    t.string  "token"
   end
+
+  add_index "albums", ["token"], name: "index_albums_on_token", unique: true
 
   create_table "pages", force: true do |t|
     t.integer "album_id"
