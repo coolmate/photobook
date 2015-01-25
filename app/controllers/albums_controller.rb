@@ -9,11 +9,11 @@ class AlbumsController < ApplicationController
   end
 
   def show
-    render json: Album.find(params[:id])
+    render json: Album.find_by_token(params[:id])
   end
 
   def destroy
-    album = Album.find(params[:id])
+    album = Album.find_by_token(params[:id])
     return head :bad_request unless album
     return head :unauthorized unless current_user == album.user
 

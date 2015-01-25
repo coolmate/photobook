@@ -1,4 +1,4 @@
 class AlbumSerializer < ActiveModel::Serializer
-  attributes :id, :name
+  attributes :token, :name
   has_many :pages
 end

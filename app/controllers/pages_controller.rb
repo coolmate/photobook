@@ -23,7 +23,7 @@ class PagesController < ApplicationController
   end
 
   def create
-    album = Album.find(params[:page][:album])
+    album = Album.find_by_token(params[:page][:album])
     return head :bad_request unless album
     return head :unauthorized unless current_user == album.user
 

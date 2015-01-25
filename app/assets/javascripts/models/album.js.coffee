@@ -1,6 +1,7 @@
 Photobook.Album = DS.Model.extend Ember.Validations.Mixin,
-  name: DS.attr('string')
-  pages: DS.hasMany('page')
+  token : DS.attr('string')
+  name  : DS.attr('string')
+  pages : DS.hasMany('page')
 
   validations:
     name:
@@ -8,5 +9,6 @@ Photobook.Album = DS.Model.extend Ember.Validations.Mixin,
         message: 'Please enter a name.'
 
 Photobook.AlbumSerializer = DS.RESTSerializer.extend DS.EmbeddedRecordsMixin,
+  primaryKey: 'token'
   attrs:
     pages: { embedded: 'always' }

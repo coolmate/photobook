@@ -21,9 +21,9 @@ test 'when albums exist', ->
 
   respondWithUser @server
   respondWithAlbums @server, [
-    { id: 1, name: "My Album One", pages: [] },
-    { id: 2, name: "My Album Two", pages: [] },
-    { id: 3, name: "My Album Three", pages: [] }
+    { token: 1, name: "My Album One", pages: [] },
+    { token: 2, name: "My Album Two", pages: [] },
+    { token: 3, name: "My Album Three", pages: [] }
   ]
   visit '/albums'
   andThen ->

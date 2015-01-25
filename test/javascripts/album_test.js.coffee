@@ -12,17 +12,17 @@ module 'album',
 test 'edit mode, loading an album with no pages', ->
   expect 1
 
-  respondWithAlbum @server, { id: 1, name: 'My Album', pages: [] }
+  respondWithAlbum @server, { token: 'abcd1234', name: 'My Album', pages: [] }
 
-  visit '/album/1/edit'
+  visit '/album/abcd1234/edit'
   andThen =>
     containsText find('.page-empty'), 'Click "+Page" to get started!'
 
 test 'view mode, loading an album with no pages', ->
   expect 1
 
-  respondWithAlbum @server, { id: 1, name: 'My Album', pages: [] }
+  respondWithAlbum @server, { token: 'abcd1234', name: 'My Album', pages: [] }
 
-  visit '/album/1'
+  visit '/album/abcd1234'
   andThen =>
     containsText find('.page-empty'), 'No pages to view.'

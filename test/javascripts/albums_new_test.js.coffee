@@ -17,8 +17,9 @@ test 'creating a new album', ->
   request =
     name: 'My Album'
     pages: []
+    token: null
   @server.respondWith 'POST', '/albums',
-    JSON.stringify(album: { id: 3, name: request.name, pages: request.pages })
+    JSON.stringify(album: { token: 3, name: request.name, pages: request.pages })
 
   visit '/albums/new'
   click 'button:contains(Create Album)'
