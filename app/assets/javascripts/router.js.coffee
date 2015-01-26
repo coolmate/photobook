@@ -7,3 +7,5 @@ Photobook.Router.map ()->
     @route 'edit'
   @route 'signup'
   @route 'profile'
+
+  @route 'album_error'

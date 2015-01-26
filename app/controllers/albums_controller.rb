@@ -9,7 +9,9 @@ class AlbumsController < ApplicationController
   end
 
   def show
-    render json: Album.find_by_token(params[:id])
+    album = Album.find_by_token(params[:id])
+    return head :not_found unless album
+    render json: album
   end
 
   def destroy
