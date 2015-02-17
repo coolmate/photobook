@@ -146,3 +146,24 @@
   width: 50%;
   height: 10%;
 }
+
+.layout-7 .photo:nth-child(1) {
+  top: 15%;
+  left: 14%;
+  width: 34%;
+  height: 55%;
+}
+
+.layout-7 .photo:nth-child(2) {
+  top: 15%;
+  right: 14%;
+  width: 34%;
+  height: 55%;
+}
+
+.layout-7 .quote:nth-child(3) {
+  bottom: 15%;
+  left: 14%;
+  width: 72%;
+  height: 10%;
+}
