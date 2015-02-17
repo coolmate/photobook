@@ -19,7 +19,7 @@ class PagesController < ApplicationController
   end
 
   def show
-    render json: Page.find(params[:id])
+    render json: Page.find_by_token(params[:id])
   end
 
   def create
@@ -37,7 +37,7 @@ class PagesController < ApplicationController
   end
 
   def destroy
-    page = Page.find(params[:id])
+    page = Page.find_by_token(params[:id])
     return head :bad_request unless page
     return head :unauthorized unless current_user == page.album.user
 
