@@ -26,7 +26,16 @@
   }
 
   &.is-empty {
-    border: 1px dashed $color-gold;
+    &.is-edit,
+    &.is-preview {
+      border: 1px dashed $color-gold;
+    }
+
+    &.is-edit {
+      &::before {
+        content: "Click to edit text"
+      }
+    }
   }
 }
 

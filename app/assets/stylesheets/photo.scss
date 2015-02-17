@@ -10,7 +10,10 @@
   }
 
   &.is-empty {
-    border: 1px dashed $color-grey;
+    &.is-edit,
+    &.is-preview {
+      border: 1px dashed $color-grey;
+    }
   }
 
   .edit-button {
