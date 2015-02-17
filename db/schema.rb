@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150125211810) do
+ActiveRecord::Schema.define(version: 20150217021157) do
 
   create_table "albums", force: true do |t|
     t.integer "user_id"
@@ -24,7 +24,10 @@ ActiveRecord::Schema.define(version: 20150125211810) do
   create_table "pages", force: true do |t|
     t.integer "album_id"
     t.integer "layout",   null: false
+    t.string  "token"
   end
+
+  add_index "pages", ["token"], name: "index_pages_on_token", unique: true
 
   create_table "photos", force: true do |t|
     t.integer "page_id"

@@ -1,4 +1,6 @@
 class Page < ActiveRecord::Base
+  include Tokenable
+
   has_many :photos, dependent: :destroy
   has_many :quotes, dependent: :destroy
   belongs_to :album
