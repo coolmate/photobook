@@ -3,6 +3,13 @@ Photobook.DisplayPhotoComponent = Ember.Component.extend
   isEmpty: Ember.computed.not('photo.url')
   isEdit: no
 
+  # If the tag is a link, open the photo in a lightbox on click.
+  attributeBindings: (->
+    if @get('tagName') is 'a' then ['href', 'data-lightbox'] else []
+  ).property('tagName')
+  href: Ember.computed.alias('photo.url')
+  'data-lightbox': Ember.computed.alias('photo.id')
+
   # Either '100%' or 'auto'. Set by `setImageSizeToCover`.
   coverWidth: null
   coverHeight: null
