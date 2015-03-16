@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150217021157) do
+ActiveRecord::Schema.define(version: 20150316030626) do
 
   create_table "albums", force: true do |t|
     t.integer "user_id"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20150217021157) do
     t.integer "page_id"
     t.text    "content"
     t.string  "justify"
+    t.integer "size"
   end
 
   create_table "users", force: true do |t|

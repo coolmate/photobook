@@ -19,6 +19,6 @@ class QuotesController < ApplicationController
   private
 
   def update_params
-    params.require(:quote).permit(:content, :justify)
+    params.require(:quote).permit(:content, :justify, :size)
   end
 end

@@ -21,6 +21,8 @@ Photobook.AlbumControls = Ember.Mixin.create
     value: 'center'
   ]
 
+  QUOTE_SIZE: [10..30]
+
   albumClassNames: (->
     "js-page layout-#{@get('currentPage.layout')}"
   ).property('currentPage.layout')
